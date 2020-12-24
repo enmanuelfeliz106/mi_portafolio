@@ -1,14 +1,23 @@
 
-.foto{
-    width: 20%;
-    margin: 20px auto;
+.contenedor{
+    display: flex;
+    margin: 50px 10px;
+
+    header{
+        width: 60%;
+        margin: 10px 10px;
+    }
+
+    nav{
+        width: 40%;
+        margin: 40px 10px;
+    }
+    
 }
 
-header{
-    
-    display: inline;
-    float: left;
-
+.mi_logo{
+    width: 15%;
+    margin-left: 150px;
 }
 
 ul{
