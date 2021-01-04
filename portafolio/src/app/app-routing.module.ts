@@ -6,7 +6,7 @@ import { CvComponent } from './cv/cv.component';
 import { TrabajosComponent } from './trabajos/trabajos.component';
 
 const routes: Routes = [{ path: 'trabajos', component: TrabajosComponent,  pathMatch: 'full'},
-                        { path: '', component: TrabajosComponent,  pathMatch: 'full'},
+                        { path: '', redirectTo: 'trabajos',  pathMatch: 'full'},
                         { path: 'acerca', component: AcercaComponent ,  pathMatch: 'full'},
                         { path: 'cv', component: CvComponent,  pathMatch: 'full'},
                         { path: 'contacto', component: ContactoComponent,  pathMatch: 'full'},];
