@@ -54,7 +54,10 @@ table {
 
 html{
     background: rgb(25, 25, 25);
-    color: rgb(224, 224, 224);
+	color: rgb(224, 224, 224);
+	background-image: url('/assets/estrellas.jpg');
+	background-repeat: repeat;
+	background-position: fixed;
 }
 
 :root{

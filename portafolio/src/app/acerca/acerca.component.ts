@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimacionesService } from '../services/animaciones.service';
 
 @Component({
   selector: 'app-acerca',
@@ -7,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private animaciones: AnimacionesService) { }
 
   ngOnInit(): void {
+    this.animaciones.animacionesToggle = false;
   }
-
 }
