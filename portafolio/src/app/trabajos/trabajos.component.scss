@@ -17,3 +17,154 @@
     }
     
 }
+
+header.mensaje{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7vh 4vw;
+    text-align: center;
+    position: relative;
+
+    .close{
+        font-size: 2vw;
+        color: red;
+        position: absolute;
+        cursor: pointer;
+        left: 50%;
+        top: -30%;
+    }
+
+    h1{
+        font-size: 2vw;
+        color: rgb(34, 34, 34);
+        pointer-events: none;
+        background-color: rgb(87, 179, 255);
+        border-radius: 10px;
+        padding: .8rem;
+     
+    }
+}
+
+.contenedor-trabajos{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+
+    .yamelitas{
+        margin: 5vh auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        position: relative;
+
+        .tecnologias-usadas{
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            left: -15%;
+
+            img{
+                width: 4vw;
+                margin: 10% 20%;
+            }
+        }
+
+        
+         
+
+        video{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: .5vw .5vh 10px grey, -.5vw -.5vh 10px grey;
+            animation: luz-creciente 3s reverse infinite;
+        }
+    }
+
+    .mealsplan{
+        margin: 5vh auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        position: relative;
+        box-shadow: 2vw 2vh 10px rgb(199, 199, 199) inset, -2vw -2vh 10px rgb(199, 199, 199) inset;
+        border-radius: 10px;
+        animation: luz-creciente-dentro 3s reverse infinite;
+        
+
+        .tecnologias-usadas{
+            width: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            left: -60%;
+
+            img{
+                width: 4vw;
+                margin: 10% 20%;
+            }
+        }
+
+        .fotos{
+            display: grid;
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+            
+
+            img{
+                border-radius: 5px;
+                margin: 2vmin;
+                width: 90%;
+            }
+            
+        }
+
+    }
+
+    
+}
+
+@keyframes luz-creciente{
+
+    0%{
+        box-shadow: .5vw .5vh 10px grey, -.5vw -.5vh 10px grey;
+    }
+
+    50%{
+        box-shadow: 2.5vw 2.5vh 10px rgb(87, 179, 255), -2.5vw -2.5vh 10px rgb(87, 179, 255);
+        
+    }
+
+    100%{
+        box-shadow: .5vw .5vh 10px grey, -.5vw -.5vh 10px grey;
+    }
+    
+}
+
+@keyframes luz-creciente-dentro{
+
+    0%{
+        box-shadow: 2vw 2vh 10px rgb(199, 199, 199) inset, -2vw -2vh 10px rgb(199, 199, 199) inset;
+    }
+
+    50%{
+        box-shadow: 5vw 5vh 10px  rgb(87, 179, 255) inset, -5vw -5vh 10px  rgb(87, 179, 255) inset;
+        
+        
+    }
+
+    100%{
+        box-shadow: 2vw 2vh 10px rgb(199, 199, 199) inset, -2vw -2vh 10px rgb(199, 199, 199) inset;
+    }
+    
+}
+
+
+

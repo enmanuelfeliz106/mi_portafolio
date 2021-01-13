@@ -17,10 +17,10 @@ export class TrabajosComponent implements OnInit {
 
     if (this.animaciones.animacionesToggle) {
 
-      $('.contenedor, .contenedor-trabajos').hide()
+      $('.contenedor, .contenedor-trabajos, header').hide()
 
-      $('.bienvenida').hide().fadeIn(2000).fadeOut(2000, function() {
-        $('.contenedor, .contenedor-trabajos').show();
+      $('.bienvenida').hide().fadeIn(200).fadeOut(200, function() {
+        $('.contenedor, .contenedor-trabajos, header').show();
         $(this).remove();
 
         
@@ -37,11 +37,11 @@ export class TrabajosComponent implements OnInit {
     }
 
 
-    
-
-    
+  }
 
 
+  cerrarMensaje(){
+    $('header.mensaje').fadeOut(1000);
   }
 
 }
