@@ -18,6 +18,41 @@
     
 }
 
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    
+
+    .contenido{
+        position: relative;
+        color: rgba(0, 0, 0, .8);
+        width: 50%;
+        font-size: 4vmin;
+        background-color: transparent;
+        border: 1px groove rgba(0, 0, 0, .7);
+        border-radius: 10px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, .9), rgb(87, 179, 255));
+        padding: 4vmin;
+
+        .cerrar-modal{
+            position: absolute;
+            right: 5%;
+            top: 10%;
+            color: red;
+            cursor: pointer;
+        }
+    }
+}
+
+
 header.mensaje{
 
     display: flex;
@@ -63,6 +98,15 @@ header.mensaje{
         width: 70%;
         position: relative;
 
+        .information-icon{
+            position: absolute;
+            left: 107%;
+            background-color: aliceblue;
+            border-radius: 50%;
+            width: 4vw;
+            cursor: pointer;
+        }
+
         .tecnologias-usadas{
             position: absolute;
             display: flex;
@@ -94,9 +138,18 @@ header.mensaje{
         align-items: center;
         width: 70%;
         position: relative;
-        box-shadow: 2vw 2vh 10px rgb(199, 199, 199) inset, -2vw -2vh 10px rgb(199, 199, 199) inset;
+        box-shadow: .5vw .5vh 10px grey, -.5vw -.5vh 10px grey;
         border-radius: 10px;
-        animation: luz-creciente-dentro 3s reverse infinite;
+        animation: luz-creciente 3s reverse infinite;
+
+        .information-icon{
+            position: absolute;
+            left: 107%;
+            background-color: aliceblue;
+            border-radius: 50%;
+            width: 4vw;
+            cursor: pointer;
+        }
         
 
         .tecnologias-usadas{
@@ -119,7 +172,7 @@ header.mensaje{
             
 
             img{
-                border-radius: 5px;
+                border-radius: 10px;
                 margin: 2vmin;
                 width: 90%;
             }
