@@ -1,0 +1,253 @@
+
+$small: 280px;
+$small-medium: 480px;
+$large: 1250px;
+
+.contenedor-acerca{
+    margin: 15vh auto;
+}
+
+.habilidades{
+    
+
+    img{
+        margin: 15px;
+        position: fixed;
+        z-index: -1000;
+        top: 0;
+        left: -50%;
+        width: 50%;
+        transform: scale(.5);
+        
+        animation: lluvia 10s infinite alternate linear; 
+
+        
+
+        
+        
+    }
+
+    
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    
+    
+
+    .virtudes{
+        position: relative;
+        top: -30%;
+        width: 100%;
+        background: url('/assets/aboutme.svg') center no-repeat;
+        position: relative;
+        color: rgb(36, 36, 36);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        
+
+
+        article{
+            display: grid;
+            grid-template: 1fr / 1fr 1fr 1fr;
+            justify-content: center;
+            justify-items: center;
+            position: relative;
+            top: 0%;
+            
+
+            width: 100%;
+
+            header, ul{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            header{
+                position: relative;
+                top: -12%;
+            }
+
+            ul{
+                width: 80%;
+                text-align: center;
+
+                li{
+                    
+                    padding: 1.5vmin;
+                    font-size: 3vmin;
+                    background-color: rgba(0, 0, 255, 0.13);
+                    border-radius: 10px;
+                }
+            }
+            
+            
+      
+            
+            
+            h1{
+                text-shadow: 1px 1px 8px grey;
+                padding: 3vmin;
+                text-align: center;
+            }
+
+            p{
+              
+                padding: 3vmin;
+            }
+
+
+        }
+    }
+    
+}
+
+@keyframes lluvia{
+    25%{
+        top: 25%;
+        left: 0%;
+        transform: scale(1);
+    }
+
+    50%{
+        top: 0%;
+        left: 25%;
+        transform: scale(.5);
+    }
+
+    75%{
+        top: 50%;
+        left: 50%;
+        transform: scale(1);
+    }
+
+    100%{
+        top: 0%;
+        left: 100%;
+        transform: scale(.5);
+    }
+}
+
+
+@media screen and (min-width: $large){
+    .contenedor-acerca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    
+        .acerca-de-mi{
+            display: grid;
+            grid-template: 4fr 6fr / 1fr;
+            width: 80%;
+    
+            header{
+                display: grid;
+                grid-template: 1fr 1fr / 3fr 7fr;
+                justify-content: center;
+                justify-items: center;
+
+                img{
+                    width: 100%;
+                }
+    
+                .contenido{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 70%;
+    
+                    h1{
+                        
+                        border-top: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        padding: 1vmin;
+                        font-size: 5vmin;
+                        
+                    }
+    
+                    p{
+                        margin-top: 3vh;
+                        font-size: 3.5vmin;
+                        
+                    }
+                }
+    
+    
+                
+            }
+    
+        
+            
+    
+            
+        }
+    
+    }
+    
+}
+
+@media screen and (max-width: $large){
+    .contenedor-acerca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    
+        .acerca-de-mi{
+            display: grid;
+            grid-template: 4fr 6fr / 1fr;
+            width: 80%;
+    
+            header{
+                display: grid;
+                grid-template: 1fr 1fr / 1fr;
+                justify-content: center;
+                justify-items: center;
+                
+
+                img{
+                    width: 50%;
+                    
+                }
+    
+                .contenido{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 100%;
+    
+                    h1{
+                        margin-top: 0;
+                        border-top: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        padding: 1vmin;
+                        font-size: 5vmin;
+                        
+                    }
+    
+                    p{
+                        margin-top: 2vh;
+                        font-size: 3.5vmin;
+                        
+                    }
+                }
+    
+    
+                
+            }
+    
+            
+            
+    
+            
+        }
+    
+    }
+}

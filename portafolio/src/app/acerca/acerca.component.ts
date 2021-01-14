@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimacionesService } from '../services/animaciones.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-acerca',
@@ -12,5 +13,8 @@ export class AcercaComponent implements OnInit {
 
   ngOnInit(): void {
     this.animaciones.animacionesToggle = false;
+
+    // $('.habilidades').hide();
+
   }
 }
