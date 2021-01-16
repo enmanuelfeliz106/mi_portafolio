@@ -1,0 +1,59 @@
+
+
+form{
+    margin-top: 5vh;
+    margin-bottom: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+
+    label{
+        width: 70%;
+        font-size: 3vmin;
+        margin: 2vmin;
+        padding: .5rem;
+
+        input{
+            background-color: rgb(224, 224, 224);
+            padding: .5rem;
+            width: 100%;
+            margin: 1vh auto;
+            border-radius: 5px;
+            font-size: 3vmin;
+        }
+    }
+
+    textarea{
+        background-color: rgb(224, 224, 224);
+        padding: .5rem;
+        width: 100%;
+        margin: 1vh auto;
+        border-radius: 5px;
+        font-size: 3vmin;
+    }
+
+    div{
+        width: 50%;
+        display: block;
+        padding: .5rem;
+        
+
+    }
+
+
+
+    button{
+        margin: 0 auto;
+        background-color: rgb(111, 194, 3);
+        color: aliceblue;
+        width: 100%;
+        font-size: 3vmin;
+        width: fill;
+        border-radius: 5px;
+        padding: .5rem;
+        cursor: pointer;
+        
+    }
+}
