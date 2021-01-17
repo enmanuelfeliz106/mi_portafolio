@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -13,7 +15,7 @@ export class AppComponent implements OnInit{
 
 
   ngOnInit(){
-
+    firebase.default.initializeApp(environment.firebaseConfig);
 
     
     

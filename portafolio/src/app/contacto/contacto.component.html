@@ -1,31 +1,31 @@
 
 
-<form action="mailto:enmanuelfeliz106@gmail.com" id="formulario" method="POST">
+<form id="formulario">
 
 
     <label>Tu Nombre
-        <input type="text" name="nombre" required>
+        <input id="nombre" type="text" name="nombre" required [(ngModel)]="nombre">
     </label>
-
+    
     <label>Tu Email
-        <input type="email" name="email" required>
+        <input type="email" name="email" required [(ngModel)]="email">
     </label>
 
     <label>Asunto
-        <input type="text" name="asunto" required>
+        <input type="text" name="asunto" required [(ngModel)]="asunto">
     </label>
 
     <label>Mensaje
 
-        <textarea name="mensaje" cols="30" rows="5" required></textarea>
+        <textarea name="mensaje" cols="30" rows="5" required [(ngModel)]="mensaje"></textarea>
 
     </label>
 
     <div >
-        <button>Enviar</button>
+        <button (click)="enviarMensaje(nombre, email, asunto, mensaje)">Enviar</button>
     </div>
-
     
     
     
 </form>
+

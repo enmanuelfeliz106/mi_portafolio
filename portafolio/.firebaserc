@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "enmanuelfelizportfolio": {
+      "hosting": {
+        "portafolio": [
+          "enmanuelfelizportfolio"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "enmanuelfelizportfolio"
+  }
+}
