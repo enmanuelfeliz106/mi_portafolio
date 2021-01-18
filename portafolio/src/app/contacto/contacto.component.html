@@ -1,31 +1,49 @@
 
+<div class="contacto-container">
 
-<form id="formulario">
+    <div class="mensaje-container">
+        <div class="mensaje-enviado">
+            <img src="assets/mail-sent.svg" alt="imagen de email enviado">
+            <h1>Tu mensaje ha sido enviado.</h1>
+            <p>Gracias por ponerte en contacto conmigo. </p>
+        </div>
 
-
-    <label>Tu Nombre
-        <input id="nombre" type="text" name="nombre" required [(ngModel)]="nombre">
-    </label>
-    
-    <label>Tu Email
-        <input type="email" name="email" required [(ngModel)]="email">
-    </label>
-
-    <label>Asunto
-        <input type="text" name="asunto" required [(ngModel)]="asunto">
-    </label>
-
-    <label>Mensaje
-
-        <textarea name="mensaje" cols="30" rows="5" required [(ngModel)]="mensaje"></textarea>
-
-    </label>
-
-    <div >
-        <button (click)="enviarMensaje(nombre, email, asunto, mensaje)">Enviar</button>
     </div>
     
+
     
+
+    <form id="formulario">
+
+        <h1>Pongámonos en contacto</h1>
+
+        <label>Tu Nombre
+            <input id="nombre" type="text" name="nombre" required [(ngModel)]="nombre">
+        </label>
+        
+        <label>Tu Email
+            <input type="email" name="email" required [(ngModel)]="email">
+        </label>
     
-</form>
+        <label>Asunto
+            <input type="text" name="asunto" required [(ngModel)]="asunto">
+        </label>
+    
+        <label>Mensaje
+    
+            <textarea name="mensaje" cols="30" rows="5" required [(ngModel)]="mensaje"></textarea>
+    
+        </label>
+    
+        <div >
+            <button (click)="enviarMensaje(nombre, email, asunto, mensaje)">Enviar</button>
+        </div>
+        
+        
+        
+    </form>
+</div>
+
+
+
 

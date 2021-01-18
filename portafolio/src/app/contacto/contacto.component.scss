@@ -1,6 +1,63 @@
+.contacto-container{
+
+    width: 100%;
+    height: 100%;
+    margin: 10vh auto;
+
+
+    .mensaje-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        .mensaje-enviado{
+            margin: auto;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: aliceblue;
+            border-radius: 10px;
+            color: rgb(111, 194, 3);
+    
+            img{
+                width: 30%;
+                margin: 2vh auto;
+            }
+    
+            p{
+                font-size: 3vmin;
+                margin: 2vh auto;
+            }
+        }
+        
+    }
+
+    
+
+
+    h1{
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;  
+        font-size: 5vmin;
+        width: fit-content;
+    }
+}
+
+
+
 
 
 form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
     margin-top: 5vh;
     margin-bottom: 15vh;
     display: flex;
@@ -8,6 +65,8 @@ form{
     justify-content: center;
     justify-items: center;
     align-items: center;
+
+    
 
     label{
         width: 70%;
@@ -22,6 +81,12 @@ form{
             margin: 1vh auto;
             border-radius: 5px;
             font-size: 3vmin;
+            
+        }
+
+        input:focus{
+            border: 5px groove rgb(111, 194, 3);
+            
         }
     }
 
@@ -32,6 +97,10 @@ form{
         margin: 1vh auto;
         border-radius: 5px;
         font-size: 3vmin;
+    }
+
+    textarea:focus{
+        border: 1vmin groove rgb(111, 194, 3);
     }
 
     div{

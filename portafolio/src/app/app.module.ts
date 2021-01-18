@@ -8,10 +8,8 @@ import { AcercaComponent } from './acerca/acerca.component';
 import { CvComponent } from './cv/cv.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 
 
 @NgModule({
@@ -26,9 +24,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFirestoreModule,
   
     
   ],
