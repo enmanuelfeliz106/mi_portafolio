@@ -12,19 +12,22 @@ export class TrabajosComponent implements OnInit {
   infoProyecto = '';
   nombreProyecto = '';
 
-  constructor(private animaciones: AnimacionesService) { }
+  constructor(private animaciones: AnimacionesService) {
+    
+   }
 
   ngOnInit(): void {
 
     $('.modal').hide();
+    
 
     /**La navegacion comienza aqui, por eso aqui se aplican los stilos y scripts para todos los componentes  */
 
     if (this.animaciones.animacionesToggle) {
 
-      $('.contenedor, .contenedor-trabajos, header').hide()
+      $('.contenedor, .contenedor-trabajos, header').hide();
 
-      $('.bienvenida').hide().fadeIn(200).fadeOut(200, function() {
+      $('.bienvenida').hide().fadeIn(2000).fadeOut(2000, function() {
         $('.contenedor, .contenedor-trabajos, header').show();
         $(this).remove();
 
