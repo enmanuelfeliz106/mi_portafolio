@@ -60,7 +60,7 @@ export class TrabajosComponent implements OnInit {
 
       case 'mealsplan':
         this.nombreProyecto = 'Meals Plan';
-        this.infoProyecto = `Esta aplicación híbrida es uno de mis proyectos personales, el cual está disponible para android. Meals Plan es un calendarizador de comidas para amantes de la cocina y el fitness.`;
+        this.infoProyecto = `Esta aplicación híbrida es uno de mis proyectos personales, el cual está disponible para android. Meals Plan es un calendarizador de comidas para amantes de la cocina y el fitness. Aquí te dejo el link por si deseas descargarla:`;
         $('.mealsplan .modal').fadeIn(500);
         $('.yamelitas .modal').fadeOut(500);
         break;
