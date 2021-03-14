@@ -1,6 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { AnimacionesService } from '../services/animaciones.service';
+import * as firebase from 'firebase';
+import SwiperCore, {Navigation, Pagination, Keyboard, Controller, Swiper, EffectCube, A11y} from 'swiper/core';
+import { SwiperComponent } from 'swiper/angular';
+
+SwiperCore.use([Navigation, Pagination, Keyboard, Controller, A11y, EffectCube]);
+
+
+
+export interface Proyecto{
+  nombre: string;
+  descripcion: string;
+  fechaInicio: string;
+  fechaFinal: string;
+  imagenes: Array<string>;
+  tecnologias: Array<string>;
+  url?: string;
+}
 
 @Component({
   selector: 'app-trabajos',
@@ -11,12 +28,35 @@ export class TrabajosComponent implements OnInit {
 
   infoProyecto = '';
   nombreProyecto = '';
+  proyectos: Array<Proyecto> = [];
+
+  swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    keyboard: {
+      enabled: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets'
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
 
   constructor(private animaciones: AnimacionesService) {
+
+
     
-   }
+  }
 
   ngOnInit(): void {
+
+    this.obtenerProyectos();
 
     $('.modal').hide();
     
@@ -27,7 +67,7 @@ export class TrabajosComponent implements OnInit {
 
       $('.contenedor, .contenedor-trabajos, header').hide();
 
-      $('.bienvenida').hide().fadeIn(2000).fadeOut(2000, function() {
+      $('.bienvenida').hide().fadeIn(100).fadeOut(100, function() {
         $('.contenedor, .contenedor-trabajos, header').show();
         $(this).remove();
 
@@ -45,6 +85,29 @@ export class TrabajosComponent implements OnInit {
     }
 
 
+
+  }
+
+
+  obtenerProyectos(){
+    firebase.default.firestore().collection('proyectos').get().then(proyectos => {
+      proyectos.forEach(proyecto => {
+
+        const nuevoProyecto: Proyecto = {
+          nombre: proyecto.data().nombre,
+          descripcion: proyecto.data().descripcion,
+          fechaInicio: proyecto.data().fechaInicio,
+          fechaFinal: proyecto.data().fechaFinal,
+          imagenes: proyecto.data().imagenes,
+          tecnologias: proyecto.data().tecnologias,
+          url: proyecto.data().url
+          
+        }
+
+
+        this.proyectos.push(nuevoProyecto);
+      });
+    })
   }
 
 
@@ -52,37 +115,13 @@ export class TrabajosComponent implements OnInit {
     $('header.mensaje').fadeOut(1000);
   }
 
-  abrirModal(proyecto: string){
-    switch (proyecto){
-      case 'yamelitas':
-        this.nombreProyecto = 'Yamelitas';
-        this.infoProyecto = `Página web en proceso de desarrollo, comencé este proyecto web el 02/01/2021. Yamelitas es una tienda virtual de productos para el cuidado de la piel y el cabello. Orientado mayormente a un público femenino jóven y liderado por dos jovenes emprendedoras. `;
-        $('.yamelitas .modal').fadeIn(500);
-        $('.mealsplan .modal').fadeOut(500);
-        break;
-
-      case 'mealsplan':
-        this.nombreProyecto = 'Meals Plan';
-        this.infoProyecto = `Esta aplicación híbrida es uno de mis proyectos personales, el cual está disponible para android. Meals Plan es un calendarizador de comidas para amantes de la cocina y el fitness. Aquí te dejo el link por si deseas descargarla:`;
-        $('.mealsplan .modal').fadeIn(500);
-        $('.yamelitas .modal').fadeOut(500);
-        break;
-
-      default:
-        this.infoProyecto = '';
-
-    }
-
-    
-    
+  onSwiper(swiper: any) {
+   
+  }
+  onSlideChange() {
     
   }
-
-
-  cerrarModal(){
-    $('.modal').fadeOut(500);
-
-  }
+ 
 
 
 

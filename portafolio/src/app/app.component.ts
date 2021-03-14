@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,6 +35,38 @@ export class AppComponent implements OnInit{
       alert('Hubo problemas buscando el CV. Revisa tu conexión a internet y vuelve a intentarlo.')
       console.log('Error getting document', err);
     });
+
+
+    const miDescripcion = document.getElementById('mi-descripcion')
+    
+
+    if(miDescripcion){
+      let texto = miDescripcion.textContent;
+      let contador = 0;
+      let color = 0;
+
+      if(texto){
+        
+        let largo = texto.length;
+        let letras = '';
+        setInterval( () => {
+         if(texto && contador < largo){
+           letras += texto[contador];
+           miDescripcion.textContent = letras;
+         } else {
+           clearInterval();
+         }
+         contador += 1;
+        }, 150);
+
+      }
+
+      
+    }
+
+    
+
+    
 
     
     

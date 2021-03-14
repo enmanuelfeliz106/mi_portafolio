@@ -18,24 +18,31 @@ $large: 1020px;
         text-align: center;  
         pointer-events: none;
         
+       
+        
         @keyframes mi_descripcion {
-            from {left: -800px;
-                  top: -500px;
-                  text-shadow: -50px 100px 0 rgb(214, 214, 214);}
-            to {left: 0;
-                top: 0;
-                text-shadow: 2px 2px 10px grey;
-                }
+            from{
+                color: rgb(0, 140, 255);
+            }
+
+            to{
+                color: aliceblue;
+            }
           }
         
         h1{
             position: relative;
-            left: 0px;
+            left: 0;
             top: 0;
-            animation: mi_descripcion 2s;
             font-size: 5vw;
             text-shadow: 2px 2px 10px grey;
             background-color: transparent;
+            transform: scale(1) rotate(0);
+            animation: mi_descripcion 7s linear;
+            
+            
+            
+
             
             
         }

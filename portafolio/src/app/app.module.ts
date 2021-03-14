@@ -9,6 +9,8 @@ import { CvComponent } from './cv/cv.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import {SwiperModule} from 'swiper/angular';
+
 
 
 
@@ -24,6 +26,7 @@ import { environment } from 'src/environments/environment';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    SwiperModule
   
     
   ],

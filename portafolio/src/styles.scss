@@ -61,10 +61,11 @@ button{
 
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+@import '~swiper/swiper-bundle';
+
 html{
-    background: rgb(25, 25, 25);
+    background: rgb(20, 20, 20);
 	color: rgb(224, 224, 224);
-	background-image: url('/assets/estrellas.jpg');
 	background-repeat: repeat;
 	background-position: fixed;
 }
@@ -80,9 +81,9 @@ body{
 }
 
 h1{
-    font-size: 5vmin;
+    font-size: 2rem;
 }
 
 p{
-	font-size: 3.5vmin;
+	font-size: 1.4rem;
 }

@@ -13,88 +13,89 @@
 
 <div class="contenedor-trabajos">
     
-    <div class="yamelitas">
+    <main>
 
-      <div class="info">
-        <div class="modal">
+      <article *ngFor = "let proyecto of proyectos">
 
-          <div class="contenido">
-            <div class="cerrar-modal" (click)='cerrarModal()'>
-              X
-            </div>
-            <h1>{{nombreProyecto}}</h1>
-            <p>{{infoProyecto}}</p>
+        <h1>{{proyecto.nombre}}</h1>
+
         
+        <swiper class="swiper"
+          effect="cube"
+          [slidesPerView]="1"
+          [spaceBetween]="100"
+          (swiper)="onSwiper($event)"
+          (slideChange)="onSlideChange()"
+          
+          [navigation]="true"
+          [pagination]="swiper.pagination"
+        >
+
+        
+          
+          <ng-template swiperSlide *ngFor="let imagen of proyecto.imagenes; index as i"><img class="imagen" src="{{imagen}}" alt="{{proyecto.nombre}}" ></ng-template>
+          
+
+          
+        </swiper>
+       
+
+        <div id="detalles-del-proyecto" class="detalles-del-proyecto">
+
+          <div class="detalles-adicionales">
+
+            <div class="fecha">
+              <p>Fecha inicio: {{proyecto.fechaInicio}}</p>
+            </div>
+
+            <div class="tecnologias">
+              <p>Tecnologias: </p> 
+              <div *ngFor="let tecnologia of proyecto.tecnologias" [ngSwitch]="tecnologia">
+                <img class="tecnologia-img" src="assets/tecnologias/html-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'html'">
+                <img class="tecnologia-img" src="assets/tecnologias/css-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'css'">
+                <img class="tecnologia-img" src="assets/tecnologias/javascript-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'javascript'">
+                <img class="tecnologia-img" src="assets/tecnologias/typescript-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}"*ngSwitchCase="'typescript'">
+                <img class="tecnologia-img" src="assets/tecnologias/angular-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'angular'">
+                <img class="tecnologia-img" src="assets/tecnologias/firebase-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'firebase'">
+                <img class="tecnologia-img" src="assets/tecnologias/ionic-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'ionic'">
+                <img class="tecnologia-img" src="assets/tecnologias/nodejs-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'nodejs'">
+                <img class="tecnologia-img" src="assets/tecnologias/python-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'python'">
+                <img class="tecnologia-img" src="assets/tecnologias/jquery-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'jquery'">
+                <img class="tecnologia-img" src="assets/tecnologias/bootstrap-icon.svg" alt="{{tecnologia}}" title="{{tecnologia}}" *ngSwitchCase="'bootstrap'">
+                <div *ngSwitchDefault></div>
+              </div>
+              
+
+            </div>
+
+            <div class="url">
+              <a href="http://yamelitas-store.web.app" target="_blank" rel="noopener noreferrer">Ver este proyecto</a>
+            </div>
+
+          </div>
+
+          <div class="descripcion">
+            <p>{{proyecto.descripcion}}</p>
           </div>
           
+
         </div>
 
-        <img class="information-icon" src="assets/information-circle-outline.svg" alt="icono de informacion" (click)="abrirModal('yamelitas')">
+
         
-      </div>
 
-      
-
-      <div class="tecnologias-usadas">
-        <img src="assets/tecnologias/html-icon.svg" alt="icono de html" title="html">
-        <img src="assets/tecnologias/css-icon.svg" alt="icono de css" title="css">
-        <img src="assets/tecnologias/typescript-icon.svg" alt="icono de typescript" title="typescript">
-        <img src="assets/tecnologias/angular-icon.svg" alt="icono de angular" title="angular">
-        <img src="assets/tecnologias/jquery-icon.svg" alt="icono de jquery" title="jquery">
-        <img src="assets/tecnologias/firebase-icon.svg" alt="icono de firebase" title="firebase">
-      </div>
-
-      <video controls muted>
-        <source src="assets/yamelitas-preview.mp4" type="video/mp4">
         
-      </video>
-    </div>
 
-    <div class="mealsplan">
 
-      <div class="info">
-        <div class="modal">
-
-          <div class="contenido">
-            <div class="cerrar-modal" (click)='cerrarModal()'>
-              X
-            </div>
-            <h1>{{nombreProyecto}}</h1>
-            <p>{{infoProyecto}}</p>
-            <a href="https://play.google.com/store/apps/details?id=com.mealsPlan.app" target="_blank" rel="noopener noreferrer">Meals Plan</a>
         
-          </div>
-          
-        </div>
+      </article>
+    
 
-        <img class="information-icon" src="assets/information-circle-outline.svg" alt="icono de informacion" (click)="abrirModal('mealsplan')">
+    
         
-      </div>
 
-      
 
-      <div class="tecnologias-usadas">
-        <img src="assets/tecnologias/html-icon.svg" alt="icono de html" title="html">
-        <img src="assets/tecnologias/css-icon.svg" alt="icono de css" title="css">
-        <img src="assets/tecnologias/typescript-icon.svg" alt="icono de typescript" title="typescript">
-        <img src="assets/tecnologias/angular-icon.svg" alt="icono de angular" title="angular">
-        <img src="assets/tecnologias/jquery-icon.svg" alt="icono de jquery" title="jquery">
-        <img src="assets/tecnologias/firebase-icon.svg" alt="icono de firebase" title="firebase">
-        <img src="assets/tecnologias/ionic-icon.svg" alt="icono de ionic" title="ionic">
-      </div>
-
-      <div class="fotos">
-        <img src="assets/mealsplan/1.jpg" alt="">
-        <img src="assets/mealsplan/2.jpg" alt="">
-        <img src="assets/mealsplan/3.jpg" alt="">
-        <img src="assets/mealsplan/4.jpg" alt="">
-        <img src="assets/mealsplan/5.jpg" alt="">
-        <img src="assets/mealsplan/6.jpg" alt="">
-        <img src="assets/mealsplan/7.jpg" alt="">
-        <img src="assets/mealsplan/8.jpg" alt="">
-        <img src="assets/mealsplan/9.jpg" alt="">
-      </div>
-    </div>
+    </main>
 
 
 
