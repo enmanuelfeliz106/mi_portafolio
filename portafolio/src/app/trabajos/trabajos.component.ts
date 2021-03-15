@@ -57,7 +57,6 @@ export class TrabajosComponent implements OnInit {
 
     this.obtenerProyectos();
 
-
   }
 
 

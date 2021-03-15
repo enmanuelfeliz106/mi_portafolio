@@ -14,7 +14,8 @@ export class AcercaComponent implements OnInit {
   ngOnInit(): void {
     this.animaciones.animacionesToggle = false;
 
-    // $('.habilidades').hide();
+    const elementoSuperpuesto = document.getElementById('elemento-superpuesto');
+    elementoSuperpuesto?.remove();
 
   }
 }

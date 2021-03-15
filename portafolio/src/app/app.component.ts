@@ -65,15 +65,14 @@ export class AppComponent implements OnInit{
       }
       
     }, 1000);
+
+    const elementoSuperpuesto = document.getElementById('elemento-superpuesto');
+    
+    setTimeout(() => {
+      elementoSuperpuesto?.remove();
+    }, 8000);
     
 
-    
-
-    
-
-    
-
-    
     
   }
 

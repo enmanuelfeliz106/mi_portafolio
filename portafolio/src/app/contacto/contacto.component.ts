@@ -25,6 +25,8 @@ export class ContactoComponent implements OnInit {
     this.animaciones.animacionesToggle = false;
     $('.mensaje-enviado').hide();
 
+    const elementoSuperpuesto = document.getElementById('elemento-superpuesto');
+    elementoSuperpuesto?.remove();
     
   }
 

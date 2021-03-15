@@ -157,70 +157,6 @@ main{
 }
 
 
-@media screen and (min-width: $large){
-
-
-    .contenedor-acerca{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-    
-        .acerca-de-mi{
-            display: grid;
-            grid-template: 40% 60% / 1fr;
-            width: 80%;
-    
-            header{
-                display: grid;
-                grid-template: 1fr 1fr / 3fr 7fr;
-                justify-content: center;
-                justify-items: center;
-
-                img{
-                    width: 100%;
-                    border: 1px solid aliceblue;
-                    border-radius: 50%;
-                }
-    
-                .contenido{
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-                    width: 70%;
-                    
-    
-                    h1{
-                        
-                        border-top: 1px solid grey;
-                        border-bottom: 1px solid grey;
-                        padding: 1vmin;
-                        font-size: 5vmin;
-                        text-align: center;
-                        
-                    }
-    
-                    p{
-                        margin-top: 3vh;
-                        font-size: 3.5vmin;
-                        
-                    }
-                }
-    
-    
-                
-            }
-    
-        
-            
-    
-            
-        }
-    
-    }
-    
-}
-
 @media screen and (max-width: $large){
     main{
         .virtudes{
@@ -337,4 +273,217 @@ main{
         }
     
     }
+}
+
+@media screen and (max-width: $small-medium){
+
+    .contenedor-acerca{
+        .acerca-de-mi{
+            header{
+                .contenido{
+                    h1{
+                        font-size: 1.5rem;
+                    }
+    
+                    p{
+                        font-size: 1rem; 
+                    }
+    
+                }
+            }
+            
+        }
+    }
+
+    main{
+        .virtudes{
+            article{
+
+                .virtudes-izquierda, .virtudes-derecha{
+    
+                    li{
+                        font-size: 1rem;
+                        
+                    }
+                }
+
+
+                header{
+                   
+
+                    h1{
+                        font-size: 1.5rem;
+                        background-color: aliceblue;
+                        border-radius: .5rem;
+                        
+                    }
+        
+                    p{
+                        backdrop-filter: blur(10px);
+                        font-size: 1rem;
+                        
+                    }
+      
+                }
+            }
+        }
+    }
+    
+
+    
+    
+
+}
+
+
+
+
+@media screen and (min-width: $small-medium){ //small-medium
+
+    .contenedor-acerca{
+        .acerca-de-mi{
+            header{
+                .contenido{
+                    h1{
+                        font-size: 1.7rem;
+                    }
+    
+                    p{
+                        font-size: 1.2rem; 
+                    }
+    
+                }
+            }
+            
+        }
+    }
+
+    main{
+        .virtudes{
+            article{
+
+                .virtudes-izquierda, .virtudes-derecha{
+    
+                    li{
+                        font-size: 1.2rem;
+                        
+                    }
+                }
+
+
+                header{
+                   
+
+                    h1{
+                        font-size: 1.7rem;
+                        
+                        
+                    }
+        
+                    p{
+                        font-size: 1.2rem;
+                        
+                    }
+      
+                }
+            }
+        }
+    }
+    
+    
+    
+}
+
+@media screen and (min-width: $large) {
+    .contenedor-acerca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    
+        .acerca-de-mi{
+            display: grid;
+            grid-template: 40% 60% / 1fr;
+            width: 80%;
+    
+            header{
+                display: grid;
+                grid-template: 1fr 1fr / 3fr 7fr;
+                justify-content: center;
+                justify-items: center;
+
+                img{
+                    width: 100%;
+                    border: 1px solid aliceblue;
+                    border-radius: 50%;
+                }
+    
+                .contenido{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    width: 70%;
+                    
+    
+                    h1{
+                        
+                        border-top: 1px solid grey;
+                        border-bottom: 1px solid grey;
+                        padding: 1vmin;
+                        font-size: 2rem;
+                        text-align: center;
+                        
+                    }
+    
+                    p{
+                        margin-top: 3vh;
+                        font-size: 1.5rem;
+                        
+                    }
+                }
+    
+    
+                
+            }
+    
+        
+            
+    
+            
+        }
+    
+    }
+
+    main{
+        .virtudes{
+            article{
+
+                .virtudes-izquierda, .virtudes-derecha{
+    
+                    li{
+                        font-size: 1.5rem;
+                        
+                    }
+                }
+
+
+                header{
+                   
+
+                    h1{
+                        font-size: 2rem;
+                        
+                        
+                    }
+        
+                    p{
+                        font-size: 1.5rem;
+                        
+                    }
+      
+                }
+            }
+        }
+    }
+
 }
