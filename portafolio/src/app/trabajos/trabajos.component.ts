@@ -50,40 +50,12 @@ export class TrabajosComponent implements OnInit {
 
   constructor(private animaciones: AnimacionesService) {
 
-
     
   }
 
   ngOnInit(): void {
 
     this.obtenerProyectos();
-
-    $('.modal').hide();
-    
-
-    /**La navegacion comienza aqui, por eso aqui se aplican los stilos y scripts para todos los componentes  */
-
-    if (this.animaciones.animacionesToggle) {
-
-      $('.contenedor, .contenedor-trabajos, header').hide();
-
-      $('.bienvenida').hide().fadeIn(100).fadeOut(100, function() {
-        $('.contenedor, .contenedor-trabajos, header').show();
-        $(this).remove();
-
-        
-        
-      });
-
-      this.animaciones.animacionesToggle = false;
-
-    } else {
-
-      $('.bienvenida').remove();
-      $('.contenedor header h1').css('animation', 'none')
-
-    }
-
 
 
   }
@@ -107,12 +79,14 @@ export class TrabajosComponent implements OnInit {
 
         this.proyectos.push(nuevoProyecto);
       });
+
+      
     })
   }
 
 
   cerrarMensaje(){
-    $('header.mensaje').fadeOut(1000);
+    $('#mensaje').fadeOut(1000);
   }
 
   onSwiper(swiper: any) {
@@ -121,7 +95,6 @@ export class TrabajosComponent implements OnInit {
   onSlideChange() {
     
   }
- 
 
 
 

@@ -38,31 +38,36 @@ export class AppComponent implements OnInit{
 
 
     const miDescripcion = document.getElementById('mi-descripcion')
+
+    setTimeout(() => {
+      if(miDescripcion){
+        let texto = 'Soy Enmanuel, desarrollador web y mobile'.split('');
+        let contador = 0;
+        let color = 0;
+  
+        if(texto){
+          
+          let largo = texto.length;
+          let letras = '';
+          setInterval( () => {
+           if(texto && contador < largo){
+             letras += texto[contador];
+             miDescripcion.textContent = letras;
+           } else {
+             clearInterval();
+           }
+           contador += 1;
+          }, 150);
+  
+        }
+  
+        
+      }
+      
+    }, 1000);
     
 
-    if(miDescripcion){
-      let texto = miDescripcion.textContent;
-      let contador = 0;
-      let color = 0;
-
-      if(texto){
-        
-        let largo = texto.length;
-        let letras = '';
-        setInterval( () => {
-         if(texto && contador < largo){
-           letras += texto[contador];
-           miDescripcion.textContent = letras;
-         } else {
-           clearInterval();
-         }
-         contador += 1;
-        }, 150);
-
-      }
-
-      
-    }
+    
 
     
 
