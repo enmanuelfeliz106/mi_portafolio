@@ -13,30 +13,77 @@
 
     
 
-    <form id="formulario">
+    <form id="formulario" #form="ngForm">
 
         <h1>Pongámonos en contacto</h1>
 
-        <label>Tu Nombre
-            <input id="nombre" type="text" name="nombre" required [(ngModel)]="nombre">
+        <label>Tu Nombre*
+            <input id="nombre" type="text" name="nombre" required [(ngModel)]="nombre" minlength="4" #formNombre="ngModel">
+
         </label>
+
+        <div class="mensaje-error" *ngIf = "formNombre.touched && formNombre.invalid">
+            <div *ngIf="formNombre.errors?.minlength">
+                <p>Por favor escribe un nombre con al menos 4 letras</p>
+            </div>
+
+            <div *ngIf="formNombre.errors?.required">
+                <p>Este campo es requerido</p>
+            </div>
+           
+        </div>
+
         
-        <label>Tu Email
-            <input type="email" name="email" required [(ngModel)]="email">
+        <label>Tu Email*
+            <input type="email" name="email" required [(ngModel)]="email" #formEmail="ngModel" [email]="true">
         </label>
+
+        <div class="mensaje-error" *ngIf = "formEmail.touched && formEmail.invalid">
+            <div *ngIf="formEmail.errors?.email">
+                <p>Por favor escriba un formato de email adecuado</p>
+            </div>
+
+            <div *ngIf="formEmail.errors?.required">
+                <p>Este campo es requerido</p>
+            </div>
+           
+        </div>
     
-        <label>Asunto
-            <input type="text" name="asunto" required [(ngModel)]="asunto">
+        <label>Asunto*
+            <input type="text" name="asunto" required [(ngModel)]="asunto" #formAsunto="ngModel" minlength="10">
         </label>
+
+        <div class="mensaje-error" *ngIf = "formAsunto.touched && formAsunto.invalid">
+            <div *ngIf="formAsunto.errors?.minlength">
+                <p>Este campo debe contener al menos 10 caracteres</p>
+            </div>
+
+            <div *ngIf="formAsunto.errors?.required">
+                <p>Este campo es requerido</p>
+            </div>
+           
+        </div>
     
-        <label>Mensaje
+        <label>Mensaje*
     
-            <textarea name="mensaje" cols="30" rows="5" required [(ngModel)]="mensaje"></textarea>
+            <textarea name="mensaje" cols="30" rows="5" required [(ngModel)]="mensaje" #formMensaje="ngModel"
+            placeholder="Tu mensaje debe contener al menos 20 caracteres" minlength="20"></textarea>
     
         </label>
+
+        <div class="mensaje-error" *ngIf = "formMensaje.touched && formMensaje.invalid">
+            <div *ngIf="formMensaje.errors?.minlength">
+                <p>Este campo debe contener al menos 20 caracteres</p>
+            </div>
+
+            <div *ngIf="formMensaje.errors?.required">
+                <p>Este campo es requerido</p>
+            </div>
+           
+        </div>
     
-        <div >
-            <button (click)="enviarMensaje(nombre, email, asunto, mensaje)">Enviar</button>
+        <div>
+            <button (click)="enviarMensaje(nombre, email, asunto, mensaje)" [disabled]="form.invalid || form.untouched">Enviar</button>
         </div>
         
         

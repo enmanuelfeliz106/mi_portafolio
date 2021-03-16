@@ -63,6 +63,13 @@ $large: 1020px;
 }
 
 
+form .ng-valid{
+    border: 2px solid rgb(65, 255, 65);
+}
+
+form .ng-touched.ng-invalid{
+    border: 2px solid rgb(255, 30, 30);
+}
 
 
 
@@ -77,6 +84,7 @@ form{
     justify-content: center;
     justify-items: center;
     align-items: center;
+    
 
     
 
@@ -85,6 +93,7 @@ form{
         font-size: 3vmin;
         margin: 2vmin;
         padding: .5rem;
+        position: relative;
 
         input{
             background-color: rgb(224, 224, 224);
@@ -97,7 +106,7 @@ form{
         }
 
         input:focus{
-            border: 5px groove rgb(111, 194, 3);
+            border: 5px groove rgb(0, 140, 255);
             
         }
     }
@@ -109,10 +118,11 @@ form{
         margin: 1vh auto;
         border-radius: 5px;
         font-size: 3vmin;
+        resize: none;
     }
 
     textarea:focus{
-        border: 1vmin groove rgb(111, 194, 3);
+        border: 5px groove rgb(0, 140, 255);
     }
 
     div{
@@ -135,8 +145,26 @@ form{
         border-radius: 5px;
         padding: .5rem;
         cursor: pointer;
+        filter: opacity(1);
         
     }
+
+    button:disabled{
+        filter: opacity(.5);
+    }
+
+    .mensaje-error{
+       
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        color: rgb(255, 30, 30);
+
+        
+    }
+
+    
 }
 
 @media screen and (max-width: $small-medium){
