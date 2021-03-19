@@ -14,6 +14,7 @@ import {SwiperModule} from 'swiper/angular';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import {SwiperModule} from 'swiper/angular';
     AppRoutingModule,
     FormsModule,
     SwiperModule
-  
+
+    
     
   ],
   providers: [],

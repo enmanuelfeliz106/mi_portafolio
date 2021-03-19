@@ -41,7 +41,7 @@
 
             <section class="virtudes">
 
-                <img src="assets/aboutme.svg" alt="imagen de acerca de mis virtudes">
+                <img src="assets/undraw_about_me.svg" alt="imagen de acerca de mis virtudes">
 
                 <article>
                     <ul class="virtudes-izquierda">
@@ -73,6 +73,52 @@
         
         
     </div>
+
+    <div id="certificados" class="certificados">
+
+        <div id="swiper-menu" class="swiper-menu">
+
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide menu">
+                                    <h1>Certificados</h1>
+                                    <ul id="menu-certificados" class="menu-certificados">
+                                        <li class="certificado certificado{{i}}" *ngFor="let certificado of certificados; index as i" (click)="seleccionarCertificado(i)">{{certificado.nombre}}</li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide content">
+                                    <div class="menu-button">
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                        <div class="bar"></div>
+                                    </div>
+                                    <img class="imagen" [src]="certificadoActivo.imgUrl" [alt]="certificadoActivo.nombre" >
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+
+        
+
+        
+
+        
+
+
+    </div>
+
+
+    <div id="mensaje-landscape" class="mensaje-landscape" *ngIf="mensajeLandscape">
+       <h1>Por favor coloque su pantalla en horizontal para ver mis certificados.</h1>
+    </div>
+    
+
+    
     
 </div>
+
 

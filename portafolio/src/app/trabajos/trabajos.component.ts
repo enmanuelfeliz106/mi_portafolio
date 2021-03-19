@@ -80,6 +80,8 @@ export class TrabajosComponent implements OnInit {
       });
 
       
+    }).catch(err => {
+      alert('Hubo un error cargando los proyectos' + err);
     })
   }
 
